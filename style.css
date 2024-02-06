@@ -1,7 +1,69 @@
-#header {
-    color: pink;
+body {
+    all: unset;
+    background-color: pink;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#header:hover {
-    color: blue;
+#main-container {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 57, 90);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+#header {
+    padding: 0 50px;
+    text-align: center;
+}
+
+#button-container {
+    margin-top: 10vh;
+    width: 100%;
+    display: flex;
+}
+
+button {
+    all: unset;
+}
+
+.btn {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    background-color:  rgb(255, 108, 132);
+    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+    cursor: pointer;
+}
+
+.btn:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+#btn-yes {
+    margin-left: 15%;
+}
+
+#btn-no {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: right 0.5s, top 0.5s;
 }
