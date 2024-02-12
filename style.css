@@ -63,7 +63,33 @@ button {
 
 #btn-no {
     position: absolute;
+    visibility: hidden;
     right: 0;
     top: 0;
+}
+
+#btn-no.btn-transition {
     transition: right 0.5s, top 0.5s;
+}
+
+@media only screen and (max-width: 750px) {
+    #main-container {
+        width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    #main-container {
+        width: 100%;
+    }
+
+    #btn-yes {
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    #main-container {
+        width: 90vw;
+    }
 }

@@ -4,15 +4,29 @@ const yesBtn = document.querySelector("#btn-yes");
 let counter = 0;
 let hoverActive = true;
 
+const windowWidth =
+  window.innerWidth ||
+  document.documentElement.clientWidth ||
+  document.body.clientWidth;
+const windowHeight =
+  window.innerHeight ||
+  document.documentElement.clientHeight ||
+  document.body.clientHeight;
+const isMobileWidth = windowWidth < 800;
+
 setNoButtonBasePosition();
 
-noBtn.addEventListener("mouseover", mouseOverHandler);
-noBtn.addEventListener("click", noBtnClickHandler);
+if (isMobileWidth) {
+  noBtn.addEventListener("click", mouseOverHandler);
+} else {
+  noBtn.addEventListener("mouseover", mouseOverHandler);
+}
 
 function setNoButtonBasePosition() {
   const yesBtnRect = yesBtn.getBoundingClientRect();
   noBtn.style.top = yesBtnRect.top + "px";
   noBtn.style.right = yesBtnRect.left + "px";
+  noBtn.style.visibility = "visible";
 }
 
 function setButtonRandomPosition() {
@@ -30,6 +44,9 @@ function setButtonRandomPosition() {
 
 function mouseOverHandler() {
   if (!hoverActive) return;
+
+  if (!noBtn.classList.contains("btn-transition"))
+    noBtn.classList.add("btn-transition");
   hoverActive = false;
   counter++;
   setButtonRandomPosition();
@@ -42,10 +59,18 @@ function mouseOverHandler() {
     setNoButtonBasePosition();
     counter = 0;
     hoverActive = false;
-    noBtn.removeEventListener("mouseover", mouseOverHandler);
+
+	if(isMobileWidth)
+    	noBtn.removeEventListener("click", mouseOverHandler);
+	else
+    	noBtn.removeEventListener("mouseover", mouseOverHandler);
+
+    noBtn.addEventListener("click", noBtnClickHandler);
   }
 }
 
 function noBtnClickHandler() {
   if (counter > 0 && !hoverActive) return;
+
+  console.log("click time!");
 }
