@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Czy zostaniesz moją walentynką?</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="main-container">
-      <div id="container-background-image"></div>
-      <div id="pearl-img"></div>
-      <div id="header">Czy zostaniesz moją walentynką?</div>
-      <div id="button-container">
-        <button type="button" class="btn" id="btn-yes">TAK</button>
-      </div>
-    </div>
-    <button type="button" class="btn" id="btn-refresh">JESZCZE RAZ</button>
-    <button type="button" class="btn" id="btn-no">NIE</button>
 
-    <script type="text/javascript" src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Czy zostaniesz moją walentynką?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div id="video-background"></div>
+  <video muted id="confetti-video">
+    <source src="./Images/confetti.mp4" type="video/mp4">
+  </video>
+  <div id="main-container">
+    <div id="container-background-image"></div>
+    <div id="pearl-img"></div>
+    <div id="header">Czy zostaniesz moją walentynką?</div>
+    <div id="button-container">
+      <button type="button" class="btn" id="btn-yes">TAK</button>
+    </div>
+  </div>
+  <button type="button" class="btn" id="btn-refresh">JESZCZE RAZ</button>
+  <button type="button" class="btn" id="btn-no">NIE</button>
+
+  <script type="text/javascript" src="script.js"></script>
+</body>
+
 </html>

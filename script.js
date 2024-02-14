@@ -6,6 +6,8 @@ const backgroundImage = document.querySelector("#container-background-image");
 const mainContainer = document.querySelector("#main-container");
 const pearlImg = document.querySelector("#pearl-img");
 const btnContainer = document.querySelector("#button-container");
+const confettiVideo = document.querySelector("#confetti-video");
+const videoBackground = document.querySelector("#video-background");
 
 let counter = 0;
 let clickCounter = 0;
@@ -27,17 +29,33 @@ if (isMobileWidth) noBtn.addEventListener("click", moveButtonHandler);
 else noBtn.addEventListener("mouseover", moveButtonHandler);
 
 yesBtn.addEventListener("click", () => {
-	header.innerHTML = "<b>Kocham Cię</b>"
-	header.style.color = "white";
-	header.style.fontSize = "6vw";
-	pearlImg.style.display = "block";
-	mainContainer.classList.add('with-pearl');
-	btnContainer.style.display = 'none';
-	document.body.style.backgroundColor = "rgb(255 157 173)";
-	noBtn.style.visibility = "hidden";
-	yesBtn.style.visibility = "hidden";
-});
+  mainContainer.classList.add("with-pearl");
+  noBtn.style.visibility = "hidden";
+  yesBtn.style.visibility = "hidden";
+  videoBackground.style.visibility = "visible";
+  btnContainer.style.display = "none";
+  confettiVideo.style.visibility = "visible";
+  confettiVideo.play();
+  header.style.fontSize = "0";
 
+  setTimeout(() => {
+    mainContainer.style.transition = "all 0.7s";
+    mainContainer.style.width = "99vw";
+    mainContainer.style.height = "99vh";
+
+    setTimeout(() => {
+      header.style.transition = "font-size 1s linear";
+      header.style.padding = "0";
+      header.style.width = "100%";
+      header.innerHTML = "<b>Kocham Cię</b>";
+      header.style.color = "white";
+      header.style.fontSize = "6vw";
+      pearlImg.style.width = "47vw";
+      pearlImg.style.height = "47vh";
+      document.body.style.backgroundColor = "rgb(255 157 173)";
+    }, 600);
+  }, 1);
+});
 
 refreshBtn.addEventListener("click", () => {
   header.innerHTML = "Czy zostaniesz moją walentynką?";
