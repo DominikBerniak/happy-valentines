@@ -53,6 +53,11 @@ yesBtn.addEventListener("click", () => {
       pearlImg.style.width = "47vw";
       pearlImg.style.height = "47vh";
       document.body.style.backgroundColor = "rgb(255 157 173)";
+
+      header.addEventListener("click", () => {
+        confettiVideo.load();
+        confettiVideo.play();
+      })
     }, 600);
   }, 1);
 });
